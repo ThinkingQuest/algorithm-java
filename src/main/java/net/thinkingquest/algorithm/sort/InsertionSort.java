@@ -2,22 +2,20 @@ package net.thinkingquest.algorithm.sort;
 
 import java.util.Arrays;
 
-public class BubbleSort {
+public class InsertionSort {
 
     public void sort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            boolean flag = true;
-            for (int j = arr.length - 1; j > i; j--) {
-                if (arr[j] < arr[j - 1]) {
-                    flag = false;
-                    int tmp = arr[j];
+        for (int i = 1; i < arr.length; i++) {
+            int j = i;
+            int num = arr[j];
+            for (; j > 0; j--) {
+                if (num < arr[j - 1]) {
                     arr[j] = arr[j - 1];
-                    arr[j - 1] = tmp;
+                } else {
+                    break;
                 }
             }
-            if (flag) {
-                break;
-            }
+            arr[j] = num;
         }
     }
 
@@ -26,7 +24,7 @@ public class BubbleSort {
 //        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         System.out.println("Input: " + Arrays.toString(arr));
 
-        new BubbleSort().sort(arr);
+        new InsertionSort().sort(arr);
         System.out.println("Output: " + Arrays.toString(arr));
     }
 }
