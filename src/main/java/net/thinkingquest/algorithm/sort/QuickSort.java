@@ -28,8 +28,8 @@ public class QuickSort {
             sort(arr, startIndex, sortedIndex - 1);
         }
 
-        if (sortedIndex < endIndex) {
-            sort(arr, sortedIndex, endIndex);
+        if (sortedIndex + 1 < endIndex) {
+            sort(arr, sortedIndex + 1, endIndex);
         }
     }
 
